@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import useAuth from '../hooks/useAuth';
+import Error from '../components/Error';
 
 const Login = () => {
   const [email, setEmail] = useState('muca960403@hotmail.com');
@@ -27,7 +28,7 @@ const Login = () => {
       <h2 className='text-center uppercase text-gray-600 block text-4xl font-bold'>
         Iniciar sesión
       </h2>
-      {error.message && <p>{error.message}</p>}
+      {error.message && <Error message={error.message} />}
       <form
         className='my-10 bg-white shadow rounded-lg p-10'
         onSubmit={handleSubmit}

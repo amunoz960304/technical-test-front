@@ -1,10 +1,10 @@
 import { useState } from 'react';
-
 import RadioButtons from '../components/RadioButtons';
 import GroupAmountGraphic from '../components/GroupAmountGraphic';
 import TotalsAccountGraphic from '../components/TotalsAccountGraphic';
 import useTransactions from '../hooks/useTransactions';
 import AnalyzeFinanceGraphic from '../components/AnalyzeFinanceGraphic';
+import Error from '../components/Error';
 
 const Transactions = () => {
   const [linkId, setLinkId] = useState('');
@@ -56,11 +56,8 @@ const Transactions = () => {
       <h1 className='text-center uppercase text-gray-600 block text-4xl font-bold'>
         Grafica tus finanzas
       </h1>
-      {error.message && (
-        <p className='text-center my-10 bg-red-600 rounded-lg p-5 text-white'>
-          {error.message}
-        </p>
-      )}
+
+      {error.message && <Error message={error.message} />}
       <form
         className='my-10 bg-white shadow rounded-lg p-10'
         onSubmit={handleSubmit}
