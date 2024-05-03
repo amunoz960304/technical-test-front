@@ -5,7 +5,7 @@ const AnalyzeFinanceGraphic = ({ data }) => {
 
   const series = [totalIncomes, totalExpenses];
   const options = {
-    labels: ['Total Incomes', 'Total Expenses'],
+    labels: ['Total Ingresos', 'Total Egresos'],
     colors: ['#28a745', '#dc3545'],
     legend: {
       show: true,

@@ -18,18 +18,18 @@ const TotalsAccountGraphic = ({ data }) => {
     },
     yaxis: {
       title: {
-        text: 'Amount',
+        text: 'Monto',
       },
     },
   };
 
   const series = [
     {
-      name: 'Incomes',
+      name: 'Ingresos',
       data: data.map((item) => item.incomes),
     },
     {
-      name: 'Expenses',
+      name: 'Egresos',
       data: data.map((item) => item.expenses),
     },
   ];

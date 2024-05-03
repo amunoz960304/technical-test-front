@@ -7,7 +7,7 @@ const GroupAmountGraphic = ({ data }) => {
 
   const series = [
     {
-      name: 'Amount',
+      name: 'Monto',
       data: amounts,
     },
   ];
