@@ -10,7 +10,10 @@ const TransactionsProvider = ({ children }) => {
   const [error, setError] = useState({});
 
   const getToken = () => localStorage.getItem('token');
-  const deleteToken = () => localStorage.removeItem('token');
+  const deleteToken = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
 
   const getConfig = () => {
     return {
@@ -32,7 +35,6 @@ const TransactionsProvider = ({ children }) => {
     } catch (error) {
       if (error?.response?.status === 401) {
         deleteToken();
-        navigate('/');
         return;
       }
       setError({
@@ -52,7 +54,6 @@ const TransactionsProvider = ({ children }) => {
     } catch (error) {
       if (error?.response?.status === 401) {
         deleteToken();
-        navigate('/');
         return;
       }
 
@@ -73,7 +74,6 @@ const TransactionsProvider = ({ children }) => {
     } catch (error) {
       if (error?.response?.status === 401) {
         deleteToken();
-        navigate('/');
         return;
       }
       setError({
